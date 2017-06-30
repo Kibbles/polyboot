@@ -1,6 +1,9 @@
 # polyboot
 Reboot or reset Polycom phones remotely using curl commands (OS X / Linux).
 
+Based on jgulczyn's post on the Polycom forums:
+http://community.polycom.com/t5/VoIP/Remote-reboot-of-VVX-600s/m-p/89610#M19979
+
 Tested on VVX300 and SoundPoint 331 phones.
 
 Use one IP per line when supplying a list file.
