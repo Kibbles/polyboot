@@ -1,6 +1,8 @@
 # polyboot
-Reboot or reset Polycom phones remotely using curl commands that send a request to the device's web UI.
+Reboot or reset Polycom phones remotely using curl commands (OS X / Linux).
 Tested on VVX300 and SoundPoint 331 phones.
+
+Use one IP per line when supplying a list file.
 
 ## Usage:
 ```
