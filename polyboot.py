@@ -3,7 +3,6 @@
 # Polyboot
 # ========
 # A simple program to reboot or factory-reset Polycom phones using CURL commands to interact with the phone's web UI.
-# Adjust the authentication password below accordingly.
 #
 # Usage
 # ~~~~~
