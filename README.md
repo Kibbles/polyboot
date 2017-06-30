@@ -20,6 +20,6 @@ Factory Reset (IP list):          polyboot.py -f iplist.txt factory 1234
 
 ## Hint:
 
-Don't reconfigure 350 phones at the same time.
+Don't reconfigure 350 phones pointing to a single server simultaneously.
 
 ![danger](http://i.imgur.com/myH8Brf.png)
