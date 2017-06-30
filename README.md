@@ -1,5 +1,6 @@
 # polyboot
-Reboot or reset Polycom phones remotely.
+Reboot or reset Polycom phones remotely using curl commands that send a request to the device's web UI.
+Tested on VVX300 and SoundPoint 331 phones.
 
 ## Usage:
 ```
