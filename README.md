@@ -32,8 +32,8 @@ This will put all IPs into a text file called `dhcp_polycomlist.txt`.
 
 Remove the first two lines and you've got a list of IPs to give to polyboot.
 
-## Hint:
+## Bonus:
 
-Don't reconfigure 350 phones pointing to a single server simultaneously.
+If you reconfigure 350 phones pointing to a single server simultaneously, fun things happen!
 
 ![danger](http://i.imgur.com/myH8Brf.png)
