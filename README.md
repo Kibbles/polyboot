@@ -18,6 +18,8 @@ Reboot (IP list):                 polyboot.py -f iplist.txt reboot 1234
 Factory Reset (IP list):          polyboot.py -f iplist.txt factory 1234
 ```
 
+The default Polycom Admin password is *456*. You should probably change that.
+
 If you're using an IP list, set your `batch_size` and `batch_timeout` values in `polyboot.py` (lines 29 and 32) appropriately to reflect your infrastructure's capabilities. These values work well for our single host and 400 phones, but if you have a smaller setup you may not need it at all.
 
 ## IP List:
