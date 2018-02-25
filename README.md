@@ -46,6 +46,7 @@ Remove the first two lines and you've got a list of IPs to give to polyboot!
 ## Bonus:
 
 If you reconfigure 350 phones pointing to a single server simultaneously, fun things happen! 
+
 I implemented the pacing shortly after.
 
 ![danger](http://i.imgur.com/myH8Brf.png)
