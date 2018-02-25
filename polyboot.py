@@ -3,6 +3,7 @@
 # Polyboot
 # ========
 # A simple program to reboot or factory-reset Polycom phones using CURL commands to interact with the phone's web UI.
+# Adjust the authentication password below accordingly.
 #
 # Usage
 # ~~~~~
@@ -20,9 +21,19 @@ from sys import argv
 from base64 import b64encode
 from time import sleep
 
+# --[ Configure these to your liking ] ---------------------------------------------------------------------------------
+# Timeout between connections for a list of addresses
+timeout = 0.5
+
+# Number of phones in a list to process before pausing (to allow server to catch up with registrations etc)
+batch_size = 40
+
+# Pause duration after each batch
+batch_timeout = 60
+# -----------------------------------------------------------------------------------------------------------------------
+
 # Auth string glued in front of password
 auth_string = "Polycom:"
-
 
 # Help text
 help = '''Usage:
@@ -81,17 +92,23 @@ elif argv[1] == '-f':
     admin_password = auth_string + argv[4]
     try:
         with open(filename) as f:
-            for line in f:
+            for index, line in enumerate(f):
                 ip = line.strip()
                 if argv[3] == 'reboot':
                     reboot(ip)
                     print('Reboot instruction sent to address: ' + ip)
-                    sleep(0.4)
+                    sleep(timeout)
+                    if (index % batch_size == 0) and (index > 1):
+                        print('Pausing for ' + str(batch_timeout) + ' seconds between batches.')
+                        sleep(batch_timeout)
 
                 elif argv[3] == 'factory':
                     factory_reset(ip)
                     print('Factory reset instruction sent to address: ' + ip)
-                    sleep(0.4)
+                    sleep(timeout)
+                    if (index % batch_size == 0) and (index > 1):
+                        print('Pausing for ' + str(batch_timeout) + ' seconds between batches.')
+                        sleep(batch_timeout)
 
                 else:
                     print('ERROR: ' + argv[3] + ' is an invalid operation flag.')
