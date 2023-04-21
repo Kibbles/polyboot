@@ -51,13 +51,13 @@ def reboot(ip):
                    '-X',
                    'POST',
                    '-H',
-                   'Authorization: Basic ' + b64encode(admin_password),
+                   'Authorization: Basic ' + str(b64encode(admin_password),encoding='utf-8', errors='strict'),
                    '-H',
                    'Content-Length: 0',
                    '-H',
                    'Content-Type: application/x-www-form-urlencoded',
                    '-H',
-                   'Cookie: Authorization=Basic ' + b64encode(admin_password)]
+                   'Cookie: Authorization=Basic ' + str(b64encode(admin_password),encoding='utf-8', errors='strict')]
     Popen(reboot_curl, shell=False, stdin=None, stdout=None, stderr=None, close_fds=True)
     return
 
@@ -70,13 +70,13 @@ def factory_reset(ip):
                     '-X',
                     'POST',
                     '-H',
-                    'Authorization: Basic ' + b64encode(admin_password),
+                    'Authorization: Basic ' + str(b64encode(admin_password),encoding='utf-8', errors='strict'),
                     '-H',
                     'Content-Length: 0',
                     '-H',
                     'Content-Type: application/x-www-form-urlencoded',
                     '-H',
-                    'Cookie: Authorization=Basic ' + b64encode(admin_password)]
+                    'Cookie: Authorization=Basic ' + str(b64encode(admin_password),encoding='utf-8', errors='strict')]
     Popen(factory_curl, shell=False, stdin=None, stdout=None, stderr=None, close_fds=True)
     return
 
@@ -117,7 +117,7 @@ elif argv[1] == '-f':
 
     except Exception as error:
         print('ERROR: File couldn\'t be opened.')
-        print error
+        print(error)
 
 
 # Single-IP mode
